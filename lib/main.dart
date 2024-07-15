@@ -4,9 +4,12 @@ import 'package:islami_app/Home/homeScreen.dart';
 import 'package:islami_app/Home/quran/suraDetailsScreen.dart';
 import 'package:islami_app/MythemeData.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-
+import 'package:provider/provider.dart';
 void main() {
-  runApp(MyApp());
+  runApp(ChangeNotifierProvider(
+    
+    create: (context)=> Appconfgprovider,
+    child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
