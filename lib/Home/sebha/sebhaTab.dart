@@ -19,7 +19,7 @@ class sebhaTab extends StatelessWidget {
             SizedBox(
               height: 57,
             ),
-            Text(AppLocalizations.of(context)!.sebha),
+            Text(AppLocalizations.of(context)!.tasbehat),
             SizedBox(
               height: 20,
             ),

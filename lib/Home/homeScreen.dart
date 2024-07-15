@@ -54,6 +54,9 @@ class _HomescreenState extends State<Homescreen> {
                   BottomNavigationBarItem(
                       icon: ImageIcon(AssetImage('assets/images/radio.png')),
                       label: AppLocalizations.of(context)!.radio),
+                       BottomNavigationBarItem(
+                      icon:Icon(Icons.settings),
+                      label: AppLocalizations.of(context)!.settings),
                 ]),
           ),
           body: tabs[selectedIndex],
@@ -63,5 +66,5 @@ class _HomescreenState extends State<Homescreen> {
   }
 }
 List<Widget> tabs =[
-  Qurantab(),Hadethtab(),sebhaTab(),Radiotab()
+  Qurantab(),Hadethtab(),sebhaTab(),Radiotab(),
 ];
