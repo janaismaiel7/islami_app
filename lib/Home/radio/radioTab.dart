@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islami_app/app_colors.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class Radiotab extends StatelessWidget {
   const Radiotab({super.key});
@@ -16,7 +17,7 @@ class Radiotab extends StatelessWidget {
         SizedBox(
           height: 57,
         ),
-        Text('اداعة القران الكريم'),
+        Text(AppLocalizations.of(context)!.radio),
         SizedBox(
           height: 57,
         ),

@@ -4,6 +4,7 @@ import 'package:islami_app/Home/quran/quranTab.dart';
 import 'package:islami_app/Home/radio/radioTab.dart';
 import 'package:islami_app/Home/sebha/sebhaTab.dart';
 import 'package:islami_app/app_colors.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class Homescreen extends StatefulWidget {
   static const String routeName = 'homes_screen';
@@ -27,7 +28,7 @@ class _HomescreenState extends State<Homescreen> {
         ),
         Scaffold(
           appBar: AppBar(
-            title: Text('Islami', style: Theme.of(context).textTheme.bodyLarge),
+            title: Text(AppLocalizations.of(context)!.app_title, style: Theme.of(context).textTheme.bodyLarge),
           ),
           bottomNavigationBar: Theme(
             data: Theme.of(context)
@@ -43,16 +44,16 @@ class _HomescreenState extends State<Homescreen> {
                 items: [
                   BottomNavigationBarItem(
                       icon: ImageIcon(AssetImage('assets/images/quran.png')),
-                      label: 'Quran'),
+                      label: AppLocalizations.of(context)!.quran),
                   BottomNavigationBarItem(
                       icon: ImageIcon(AssetImage('assets/images/hadeth.png')),
-                      label: 'hadeth'),
+                      label: AppLocalizations.of(context)!.hadeth),
                   BottomNavigationBarItem(
                       icon: ImageIcon(AssetImage('assets/images/sebha.png')),
-                      label: 'sebha'),
+                      label: AppLocalizations.of(context)!.hadeth),
                   BottomNavigationBarItem(
                       icon: ImageIcon(AssetImage('assets/images/radio.png')),
-                      label: 'radio'),
+                      label: AppLocalizations.of(context)!.radio),
                 ]),
           ),
           body: tabs[selectedIndex],
