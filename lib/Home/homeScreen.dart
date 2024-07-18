@@ -67,5 +67,5 @@ class _HomescreenState extends State<Homescreen> {
   }
 }
 List<Widget> tabs =[
-  Qurantab(),Hadethtab(),sebhaTab(),Radiotab(),Settingtab()
+  Qurantab(),Hadethtab(),SebhaTab(),Radiotab(),Settingtab()
 ];
