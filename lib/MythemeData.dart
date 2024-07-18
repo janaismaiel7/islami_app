@@ -61,6 +61,7 @@ class MyThemedata{
       selectedItemColor: AppColors.yellowColor,
      
     ),
+    bottomSheetTheme: BottomSheetThemeData(backgroundColor: AppColors.primaryDarkColor),
     textTheme: TextTheme(
       bodyLarge: TextStyle(
         color: AppColors.whiteColor,

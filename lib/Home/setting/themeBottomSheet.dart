@@ -25,7 +25,7 @@ class _ThemebottomsheetState extends State<Themebottomsheet> {
               onTap: () {
                 provider.changeTheme(ThemeMode.dark);
               },
-              child: provider.appTheme==ThemeMode.dark
+              child: provider.isDarkMode()
                   ? getsSelectedIteamWidget(
                       AppLocalizations.of(context)!.dark)
                   : getuUnSelectedIteamWidget(
@@ -37,7 +37,7 @@ class _ThemebottomsheetState extends State<Themebottomsheet> {
               onTap: () {
                 provider.changeTheme(ThemeMode.light);
               },
-              child: provider.appTheme == ThemeMode.light
+              child: !provider.isDarkMode()
                   ? getsSelectedIteamWidget(AppLocalizations.of(context)!.light)
                   : getuUnSelectedIteamWidget(
                       AppLocalizations.of(context)!.light)),

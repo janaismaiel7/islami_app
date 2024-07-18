@@ -3,6 +3,8 @@ import 'package:flutter/services.dart';
 import 'package:islami_app/Home/quran/iteamSuraDetails.dart';
 import 'package:islami_app/Home/quran/itemSuraName.dart';
 import 'package:islami_app/app_colors.dart';
+import 'package:islami_app/providers/appConfgProvider.dart';
+import 'package:provider/provider.dart';
 
 class Suradetailsscreen extends StatefulWidget {
   static const String routeName = 'sura_details';
@@ -16,17 +18,19 @@ class _SuradetailsscreenState extends State<Suradetailsscreen> {
 
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<Appconfgprovider>(context);
     var args = ModalRoute.of(context)?.settings.arguments as suraDetailsArgs;
     if (versus.isEmpty) {
       loadFile(args.index);
     }
     return Stack(children: [
-      Image.asset(
-        'assets/images/main_background.png',
-        width: double.infinity,
-        height: double.infinity,
-        fit: BoxFit.fill,
-      ),
+      provider.isDarkMode()
+          ? Image.asset('assets/images/dark bg.png',
+              width: double.infinity, height: double.infinity, fit: BoxFit.fill)
+          : Image.asset('assets/images/main_background.png',
+              width: double.infinity,
+              height: double.infinity,
+              fit: BoxFit.fill),
       Scaffold(
         appBar: AppBar(
           title: Text(args.name, style: Theme.of(context).textTheme.bodyLarge),
@@ -41,12 +45,16 @@ class _SuradetailsscreenState extends State<Suradetailsscreen> {
                     horizontal: MediaQuery.of(context).size.width * 0.06,
                     vertical: MediaQuery.of(context).size.height * 0.05),
                 decoration: BoxDecoration(
-                    color: AppColors.whiteColor,
+                    color: provider.isDarkMode()
+                        ? AppColors.primaryDarkColor
+                        : AppColors.whiteColor,
                     borderRadius: BorderRadius.circular(24)),
                 child: ListView.separated(
                   separatorBuilder: (context, index) {
                     return Divider(
-                      color: AppColors.primaryLightColor,
+                      color: provider.isDarkMode()
+                          ? AppColors.yellowColor
+                          : AppColors.whiteColor,
                       thickness: 2,
                     );
                   },
