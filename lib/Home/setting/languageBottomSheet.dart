@@ -50,15 +50,16 @@ Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(text,
-              style: Theme.of(context).textTheme.bodySmall,),
+              style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                color: AppColors.primaryLightColor
+              )),
                 Icon(Icons.check,size: 25,color: 
-                AppColors.primaryLightColor,)
+                AppColors.primaryLightColor,),
+                
               ],
             );
   }
   Widget getUnSelectedIteamWidget(String text){
-    return Text(text,style: Theme.of(context).textTheme.bodySmall!.copyWith(
-              color: AppColors.primaryLightColor
-             ));
+    return Text(text,style: Theme.of(context).textTheme.bodySmall!);
   }
 }

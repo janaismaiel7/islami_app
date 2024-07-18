@@ -66,7 +66,7 @@ class _SebhaTabState extends State<SebhaTab> {
               ),
               child: Text(
                 '$counter',
-                style: TextStyle(color: Colors.white),
+                style: TextStyle(color:AppColors.blackColor),
               ),
             ),
             SizedBox(height: 20),
