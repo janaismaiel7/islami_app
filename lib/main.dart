@@ -6,12 +6,15 @@ import 'package:islami_app/MythemeData.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islami_app/providers/appConfgProvider.dart';
 import 'package:provider/provider.dart';
-void main() {
+import 'package:shared_preferences/shared_preferences.dart';
+Future<void> main() async {
   
   runApp(ChangeNotifierProvider(
     create: (context)=> Appconfgprovider(),
-    
     child: MyApp()));
+    
+  
+    
 }
 
 class MyApp extends StatelessWidget {
@@ -19,6 +22,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    
     var provider=Provider.of<Appconfgprovider>(context);
     return MaterialApp(
       localizationsDelegates: AppLocalizations.localizationsDelegates,
